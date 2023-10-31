@@ -1,0 +1,422 @@
+{
+
+        "estacionesNS": {
+            "primavera": {
+                "elemento_id": 1,
+                "norte":{
+                    "inicio": [21, 3],
+                    "fin": [22, 6]
+                },
+                "sur": {
+                    "inicio": [24, 9],
+                    "fin": [22, 12]}
+            },"verano": {
+                "elemento_id": 2,
+                "norte":{
+                    "inicio": [23, 6],
+                    "fin": [23, 9]
+                },
+                "sur": {
+                    "inicio": [23, 12],
+                    "fin": [22, 3]}
+            },"otoño": {
+                "elemento_id": 4,
+                "norte":{
+                    "inicio": [24, 9],
+                    "fin": [22, 12]
+                },
+                "sur": {
+                    "inicio": [21, 3],
+                    "fin": [20, 6]}
+            },"invierno": {
+                "elemento_id": 5,
+                "norte":{
+                    "inicio": [23, 12],
+                    "fin": [20, 3]
+                },
+                "sur": {
+                    "inicio": [21, 6],
+                    "fin": [23, 9]}
+            }
+        },
+
+    "elementos": [
+        {
+            "id": 1,
+            "elemento": "Madera",
+            "relaciones": {
+                "planeta": "Júpiter",
+                "direccion": "Este",
+                "estacion": "Primavera",
+                "organo": "Higado",
+                "vesicula": "Vesícula Biliar",
+                "clima_perverso": "Ventoso",
+                "color": "Verde",
+                "nota_musical": "Do",
+                "sentido": "Vista",
+                "nutre_a": "Músculos y uñas",
+                "humor": "Lágrimas",
+                "sabor": "Acido",
+                "olor": "Rancio",
+                "aspectos_psiquicos": "Hun",
+                "valores_psiquicos": "Espíritu",
+                "emociones": "Cólera",
+                "energia_dinamica": "Sangre",
+                "espresion": "Grito",
+                "alimentos": "Mijo, carnero",
+                "esfuerzo_excesivo": "Abuso ocular"
+            },
+            "vias":{
+                "yin": [],
+                "yang": []
+            }
+        },
+        {
+            "id": 2,
+            "elemento": "Fuego",
+            "relaciones": {
+                "planeta": "Marte",
+                "direccion": "Sur",
+                "estacion": "Verano",
+                "organo": "Corazón",
+                "vesicula": "Intestino Delgado",
+                "clima_perverso": "Cálido",
+                "color": "Rojo",
+                "nota_musical": "La",
+                "sentido": "Palabra",
+                "nutre_a": "Pulso, tez",
+                "humor": "Sudor",
+                "sabor": "Amargo",
+                "olor": "Quemado",
+                "aspectos_psiquicos": "Shin",
+                "valores_psiquicos": "Conciencia",
+                "emociones": "Alegría",
+                "energia_dinamica": "Energía psíquica",
+                "espresion": "Risa",
+                "alimentos": "Trigo, pollo",
+                "esfuerzo_excesivo": "Abuso al caminar"
+            },
+            "vias":{
+                "yin": [],
+                "yang": []
+            }
+        },
+        {
+            "id": 3,
+            "elemento": "Tierra",
+            "relaciones": {
+                "planeta": "Saturno",
+                "direccion": "Centro",
+                "estacion": "Canícula",
+                "organo": "Bazo",
+                "vesicula": "Estómago",
+                "clima_perverso": "Húmedo",
+                "color": "Amarillo",
+                "nota_musical": "Mi",
+                "sentido": "Gusto",
+                "nutre_a": "Tejido conjuntival, labios",
+                "humor": "Saliva",
+                "sabor": "Dulce",
+                "olor": "Perfumado",
+                "aspectos_psiquicos": "I",
+                "valores_psiquicos": "Ideas",
+                "emociones": "Obsesión",
+                "energia_dinamica": "Energía física",
+                "espresion": "Canto",
+                "alimentos": "Centeno, buey",
+                "esfuerzo_excesivo": "Abuso pos. sentada"
+            },
+            "vias":{
+                "yin": [],
+                "yang": []
+            }
+        },
+        {
+            "id": 4,
+            "elemento": "Metal",
+            "relaciones": {
+                "planeta": "Venus",
+                "direccion": "Oeste",
+                "estacion": "Otoño",
+                "organo": "Pulmón",
+                "vesicula": "Intestino Grueso",
+                "clima_perverso": "Seco",
+                "color": "Blanco",
+                "nota_musical": "Re",
+                "sentido": "Olfato",
+                "nutre_a": "Piel, vello",
+                "humor": "Moco",
+                "sabor": "Sabor",
+                "olor": "Cárneo",
+                "aspectos_psiquicos": "Po",
+                "valores_psiquicos": "Espíritus animales",
+                "emociones": "Tristeza",
+                "energia_dinamica": "Energía vital",
+                "espresion": "Sollozo",
+                "alimentos": "Arroz, caballo",
+                "esfuerzo_excesivo": "Abuso pos. acostada"
+            },
+            "vias":{
+                "yin": [],
+                "yang": []
+            }
+        },
+        {
+            "id": 5,
+            "elemento": "Agua",
+            "relaciones": {
+                "planeta": "Mercurio",
+                "direccion": "Norte",
+                "estacion": "Invierno",
+                "organo": "Riñon",
+                "vesicula": "Vejiga",
+                "clima_perverso": "Frío",
+                "color": "Negro",
+                "nota_musical": "Sol",
+                "sentido": "Audición",
+                "nutre_a": "Huesos, cabellos, médulas",
+                "humor": "Esputos",
+                "sabor": "Salado",
+                "olor": "Pútrido",
+                "aspectos_psiquicos": "Tsching",
+                "valores_psiquicos": "Voluntad, ambición",
+                "emociones": "Miedo",
+                "energia_dinamica": "Voluntad",
+                "espresion": "Gemido",
+                "alimentos": "Guisante, cerdo",
+                "esfuerzo_excesivo": "Abuso pos. parada"
+            },
+            "vias":{
+                "yin": [],
+                "yang": []
+            }
+        }
+        
+        
+    ],
+
+    "tipo_circulacion": [
+        "Centrífugo",
+        "Centrípeto"
+    ],
+
+
+    "vias_de_energia": [
+        {
+            "id": 1,
+            "via": "Estómago",
+            "elemento_id": 3,
+            "masaje": {
+                "sedacion": "45E: Ángulo ungueal externo del 2do dedo",
+                "tonificacion": "41E: Garganta del pie, media distancia entre maléolos"
+            },
+            "horario_max_actividad": [7, 9],
+            "circulacion": 0,
+            "acoplado": "BAZO PANCREAS",
+            "funcion": "Comanda el estomago con sus funciones digestivas y al duodeno.",
+            "sintomas": {
+                "falta_energia": "Gases, dolor en la boca del estomago, y tórax, digestiones lentas, eructos, anorexia. Tórax y abdomen fríos. Diarrea.",
+                "exceso_energia": "Calor en el tórax y abdomen, digestión rápida, hambre y sed, abdomen doloroso, constipación, lengua saburral, amarilla. Orina amarillo oscura."
+            },
+            "imagen": "estomago.PNG"
+        },
+        {
+            "id": 2,
+            "via": "Bazzo-Páncreas",
+            "elemento_id": 3,
+            "masaje": {
+                "sedacion": "5BP: Delante y debajo del maléolo interno",
+                "tonificacion": "2BP: Delante de la articulación metatarso falángica en el lateral del dedo gordo"
+            },
+            "horario_max_actividad": [9, 11],
+            "circulacion": 1,
+            "acoplado": "Estómago",
+            "funcion": "Comanda, ambos órganos, bazo por regulación de la cantidad de glóbulos rojos (a través de la destrucción de aquellos envejecidos o deformados), y el páncreas con respecto a la regulación de las reservas de glucógeno (aumentan mediante la de insulina).",
+            "sintomas": {
+                "falta_energia": "Abdomen tenso y distendido (aerocolia y aerogastria), anorexia, falta de sed. Digestión lenta, dolor en abdomen que mejora cuando se lo presiona. Vómitos y diarrea.",
+                "exceso_energia": "Abdomen doloroso, constipación, sensación de tensión en el tórax y en el abdomen"
+            },
+            "imagen": "bazo_pancreas.PNG"
+        },
+        {
+            "id": 3,
+            "via": "Corazón",
+            "elemento_id": 2,
+            "masaje": {
+                "sedacion": "7C: Pliegue de la muñeca",
+                "tonificacion": "9C: Ángulo ungueal interno del dedo meñique."
+            },
+            "horario_max_actividad": [11, 13],
+            "circulacion": 0,
+            "acoplado": "Intestino Delgado",
+            "funcion": "Comanda el corazón en su aspecto físico, y psíquico como centro de las emociones.",
+            "sintomas": {
+                "falta_energia": "Mala memoria, pulso débil, palpitaciones, respiración acelerada, pálido, tímido, timidez, reglas insuficientes, voz velada, micciones frecuentes con orina incolora.",
+                "exceso_energia": "cara roja, lengua seca, pulso rápido, palpitaciones dolorosas, coraje, audacia, voz sonora, reglas excesivas."
+            },
+            "imagen": "corazon.PNG"
+        },
+        {
+            "id": 4,
+            "via": "Intestino Delgado",
+            "elemento_id": 2,
+            "masaje": {
+                "sedacion": "8ID: Cara posterointerna del codo en un hueco",
+                "tonificacion": "3ID: En la articulación del meñique con el metacarpo, en un hueco, después de la articulación"
+            },
+            "horario_max_actividad": [13, 15],
+            "circulacion": 1,
+            "acoplado": "Corazón",
+            "funcion": "comanda el intestino delgado corresponde a la función de absorber los alimentos",
+            "sintomas": {
+                "falta_energia": "Formación de tumores y nódulos, dolor en el bajo vientre, diarrea, menor resistencia física, carácter débil, friolento.",
+                "exceso_energia": "Contractura del codo, dilatación dolorosa del abdomen que mejora con la expulsión de gases, fácil recuperación física, colérico, caluroso, problemas de micción dolorosa o incompleta."
+            },
+            "imagen": "intestino_delgado.PNG"
+        },
+        {
+            "id": 5,
+            "via": "Vejiga",
+            "elemento_id": 5,
+            "masaje": {
+                "sedacion": "65V: Detrás de la articulación metatarso falángica, de dedo pequeño del pié, en un hueco",
+                "tonificacion": "67V: Ángulo ungueal externo del dedo pequeño del pié."
+            },
+            "horario_max_actividad": [15, 17],
+            "circulacion": 0,
+            "acoplado": "Riñón",
+            "funcion": "Comanda a la vejiga y equilibra al riñón en la eliminación.",
+            "sintomas": {
+                "falta_energia": "Sordera, disminución de la audición, sangrado nasal, retención de orina con micciones frecuentes e insuficientes.",
+                "exceso_energia": "Obstrucción nasal, anosmia, dolor de la columna, orinas coloreadas y turbias, micción insuficiente y dolorosa, cálculos e insomnio."
+            },
+            "imagen": "vejiga.PNG"
+        },
+        {
+            "id": 6,
+            "via": "Riñón",
+            "elemento_id": 5,
+            "masaje": {
+                "sedacion": "1R: En la planta del pié en el hueco que se produce al flexionar todos los dedos",
+                "tonificacion": "7R: Dos distancias sobre el maléolo intento en el borde de la tibia. Sobre la arteria tibial posterior."
+            },
+            "horario_max_actividad": [17, 19],
+            "circulacion": 1,
+            "acoplado": "Vejiga",
+            "funcion": "Comanda al riñón y la función eliminatoria, glándula suprarrenal, la sexualidad y la voluntad.",
+            "sintomas": {
+                "falta_energia": "Dolor lumbar, ciática. Espermatorrea. Sordera, zumbidos, dolores de dientes, dolor y debilidad en las piernas. Vértigo. Falta de decisión, complejo de inferioridad, falta de autoridad. Irritabilidad antes de las reglas.",
+                "exceso_energia": "Dolor cardiaco, opresión, corazón agitado, mal aliento, cefaleas congestivas. Cólera."
+            },
+            "imagen": "rinon.PNG"
+        },
+        {
+            "id": 7,
+            "via": "Circulación-Sexualidad",
+            "elemento_id": 2,
+            "masaje": {
+                "sedacion": "7CS: En mitad del pliegue de flexión de la muñeca",
+                "tonificacion": "9CS: Ángulo ungueal dedo medio lado pulgar"
+            },
+            "horario_max_actividad": [19, 21],
+            "circulacion": 0,
+            "acoplado": "Triple Recalentador",
+            "funcion": "Representa la suma de todos los fluidos circulantes, sangre hormonas y linfa. Falta de energía: Rigidez de la cabeza y la nuca, falta de vigor sexual, depresión y descontento.",
+            "sintomas": {
+                "falta_energia": "Rigidez de la cabeza y la nuca, falta de vigor sexual, depresión y descontento.",
+                "exceso_energia": "Dolor cardiaco, opresión, corazón agitado, mal aliento, cefaleas congestivas. Cólera."
+            },
+            "imagen": "circulacion_sexualidad.PNG"
+        },
+        {
+            "id": 8,
+            "via": "Triple Recalentador",
+            "elemento_id": 2,
+            "masaje": {
+                "sedacion": "10TR: A una distancia por encima del olecranon.",
+                "tonificacion": "3TR: En la horizontal del 1ID entre el metacarpiano del meñique y el anular"
+            },
+            "horario_max_actividad": [21, 23],
+            "circulacion": 1,
+            "acoplado": "Circulación-Sexualidad",
+            "funcion": "Corresponde a la función que coordina todos los procesos automáticos que están implicados en el funcionamiento de los 3 calentadores. 1- Respiración 2- Digestión y 3- Excretora y Sexual.",
+            "sintomas": {
+                "falta_energia": "Falta de tono y fuerza en la articulación del codo.",
+                "exceso_energia": "Contractura del codo."
+            },
+            "imagen": "triple_recalentador.PNG"
+        },
+        {
+            "id": 9,
+            "via": "Vesícula Biliar",
+            "elemento_id": 1,
+            "masaje": {
+                "sedacion": "38VB: 4 distancias sobre el maléolo externo sobre el borde anterior del peroné",
+                "tonificacion": "43VB: En el espacio en entre el 4to y 5to dedo, en la primera falange del 4to dedo"
+            },
+            "horario_max_actividad": [23, 1],
+            "circulacion": 0,
+            "acoplado": "Hígado",
+            "funcion": "Comanda la vesícula, la producción de bilis y toda la vía biliar intra y extra hepática.",
+            "sintomas": {
+                "falta_energia": "Debilidad de las piernas, dificultad para caminar, mareos, temor, visión velada. Insomnio, timidez y suspiros.",
+                "exceso_energia": "Plenitud torácica, tumefacción y dolor debajo de las costillas. Cólera, somnolencia. Piel seca, dolor de ojos, hemicránea o cefalea frontal."
+            },
+            "imagen": "vesicula_biliar.PNG"
+        },
+        {
+            "id": 10,
+            "via": "Hígado",
+            "elemento_id": 1,
+            "masaje": {
+                "sedacion": "2H: En el espacio entre el 1er y el 2do dedo hacia la base del dedo gordo",
+                "tonificacion": "8H: En el pliegue interno de la rodilla, detrás del tendón"
+            },
+            "horario_max_actividad": [1, 3],
+            "circulacion": 1,
+            "acoplado": "Vesícula Biliar",
+            "funcion": "Comanda el funcionamiento del hígado y su relación con el metabolismo, sexualidad, muscular, y de la agudeza visual.",
+            "sintomas": {
+                "falta_energia": "Prurito. Acufenos, mareos, ojos secos, visión disminuida, uñas secas, espasmos, convulsiones, debilidad muscular, o parálisis. Angustia.",
+                "exceso_energia": "Afecciones del escroto, hinchazón del pene, priapismo. Cólera. Tensión y dolor en el abdomen y tórax. Vómitos, diarrea, tos, disnea. Calambres en piernas y brazos, rigidez y dolor de espalda."
+            },
+            "imagen": "higado.PNG"
+        },
+        {
+            "id": 11,
+            "via": "Pulmón",
+            "elemento_id": 4,
+            "masaje": {
+                "sedacion": "5P: En el pliegue de flexión del codo, por fuera del tendón del bíceps.",
+                "tonificacion": "9P: El pliegue de la muñeca a nivel de la arteria radial."
+            },
+            "horario_max_actividad": [3, 5],
+            "circulacion": 0,
+            "acoplado": "Intestino Grueso",
+            "funcion": "Comanda todo el aparato respiratorio, incluidas las vías aéreas superiores (laringe, fosas nasales, senos para nasales) e inferior, incluido el pulmón.",
+            "sintomas": {
+                "falta_energia": "Dolor y frio en el hombro y espalda. Temor al frío, disnea, taquipnea, tos, alteración del color de la orina. Sequedad de garganta, cara pálida. Lengua roja, pérdidas de fuerzas. Tristeza, angustia.",
+                "exceso_energia": "Dolor de hombro y espalda. Trastornos congestivos, traspiración. Poliuria. Tos seca o esputos purulentos. Agitación, sobreexitación."
+            },
+            "imagen": "pulmon.PNG"
+        },
+        {
+            "id": 12,
+            "via": "Intestino Grueso",
+            "elemento_id": 4,
+            "masaje": {
+                "sedacion": "2IG: Dedo índice cara externa después del nudillo.",
+                "tonificacion": "11IG: En el lateral del brazo, a la altura del pliegue del codo."
+            },
+            "horario_max_actividad": [5, 7],
+            "circulacion": 1,
+            "acoplado": "Pulmón",
+            "funcion": "Comanda el órgano con sus funciones de absorción de líquidos y eliminación de residuos.",
+            "sintomas": {
+                "falta_energia": "Temor al frío, escalofríos. Entra en calor difícilmente. Prolapso de recto. Constipación hipotónica o diarrea. Aerocolia.",
+                "exceso_energia": "Calor e hinchazón a lo largo del meridiano. Constipación hipertónica, abdomen doloroso, sed. Palabra incoherente. Odontalgia. Afecciones eruptivas, prurito, acné."
+            },
+            "imagen": "intestino_grueso.PNG"
+        }
+    ]
+}
