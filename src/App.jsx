@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
 
-      <CalcFechas2>
+      <CalcFechas2 hemisferio={1}>
         {Date()}
       </CalcFechas2>
     </div>

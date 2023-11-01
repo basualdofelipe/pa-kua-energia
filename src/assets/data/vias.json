@@ -3,6 +3,7 @@
         "estacionesNS": {
             "primavera": {
                 "elemento_id": 1,
+                "nombre": "Primavera",
                 "norte":{
                     "inicio": [21, 3],
                     "fin": [22, 6]
@@ -12,6 +13,7 @@
                     "fin": [22, 12]}
             },"verano": {
                 "elemento_id": 2,
+                "nombre": "Verano",
                 "norte":{
                     "inicio": [23, 6],
                     "fin": [23, 9]
@@ -19,8 +21,19 @@
                 "sur": {
                     "inicio": [23, 12],
                     "fin": [22, 3]}
+            },"canicula": {
+                "elemento_id": 3,
+                "nombre": "Canícula",
+                "norte":{
+                    "inicio": [],
+                    "fin": []
+                },
+                "sur": {
+                    "inicio": [],
+                    "fin": []}
             },"otoño": {
                 "elemento_id": 4,
+                "nombre": "Otoño",
                 "norte":{
                     "inicio": [24, 9],
                     "fin": [22, 12]
@@ -30,6 +43,7 @@
                     "fin": [20, 6]}
             },"invierno": {
                 "elemento_id": 5,
+                "nombre": "Invierno",
                 "norte":{
                     "inicio": [23, 12],
                     "fin": [20, 3]

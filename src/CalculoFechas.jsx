@@ -2,58 +2,6 @@ import data from "./assets/data/vias.json"
 
 // necesito una función que me permita saber cuántas tonificaciones y/o sedaciónes y de qué elemento hay que hacer en el día de la fecha
 
-// necesito tener la fecha de hoy (puede ser child en app)
-// en qué estación estoy
-// cuántos días estoy desde que empezó la estación
-
-
-function obtenerDiasEntreFechas(fechaInicio, fechaFin) {
-    const dias = [];
-    let fechaActual = new Date(fechaInicio);
-  
-    while (fechaActual <= fechaFin) {
-      dias.push(new Date(fechaActual));
-      fechaActual.setDate(fechaActual.getDate() + 1);
-    }
-  
-    return dias;
-}
-
-function masajes(fecha) {
-
-    const fechaFormat = new Date(fecha)
-    const estaciones = data.estaciones
-    let proxAño = 0
-    
-    if (fechaFormat.getMonth() === 11) {
-        proxAño += 1;
-      }
-
-    Object.keys(estaciones).forEach(estacion => {
-        const fechaInicio = new Date(
-            new Date().getFullYear(), // Año actual
-            estaciones[estacion].fechaInicio.mes - 1, // Mes
-            estaciones[estacion].fechaInicio.dia // Día
-        );
-
-           //si estamos en verano a principios de diciembre agrega un año más a la fecha fin
-        const fechaFin = new Date(
-
-            new Date().getFullYear()+proxAño, // Año actual +1 si estamos en diciembre
-            estaciones[estacion].fechaFin.mes - 1, // Mes
-            estaciones[estacion].fechaFin.dia // Día
-        );
-
-        if (fechaInicio <= fechaFormat && fechaFormat <=fechaFin){
-            // console.log(`Estación: ${estacion}`);
-            // console.log(`Fecha de inicio: ${fechaInicio.toDateString()}`);
-            // console.log(`Fecha de fin: ${fechaFin.toDateString()}`);
-            // console.log("---");
-        }
-      
-      });
-      
-}
 
 export function CalculoFechas() {
     
