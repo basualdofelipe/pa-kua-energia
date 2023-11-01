@@ -81,8 +81,8 @@
                 "esfuerzo_excesivo": "Abuso ocular"
             },
             "vias":{
-                "yin": [],
-                "yang": []
+                "yin": [9],
+                "yang": [10]
             }
         },
         {
@@ -111,8 +111,8 @@
                 "esfuerzo_excesivo": "Abuso al caminar"
             },
             "vias":{
-                "yin": [],
-                "yang": []
+                "yin": [4, 8],
+                "yang": [3, 7]
             }
         },
         {
@@ -141,8 +141,8 @@
                 "esfuerzo_excesivo": "Abuso pos. sentada"
             },
             "vias":{
-                "yin": [],
-                "yang": []
+                "yin": [1],
+                "yang": [2]
             }
         },
         {
@@ -171,8 +171,8 @@
                 "esfuerzo_excesivo": "Abuso pos. acostada"
             },
             "vias":{
-                "yin": [],
-                "yang": []
+                "yin": [12],
+                "yang": [11]
             }
         },
         {
@@ -201,8 +201,8 @@
                 "esfuerzo_excesivo": "Abuso pos. parada"
             },
             "vias":{
-                "yin": [],
-                "yang": []
+                "yin": [5],
+                "yang": [6]
             }
         }
         
