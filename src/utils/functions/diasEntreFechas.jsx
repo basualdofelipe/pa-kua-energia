@@ -3,8 +3,9 @@
 export function diasEntreFechas(fechaInicio, fechaFin) {
     const dias = [];
     let fechaActual = new Date(fechaInicio);
+    const fechaFinFormat = new Date(fechaFin)
   
-    while (fechaActual <= fechaFin) {
+    while (fechaActual <= fechaFinFormat) {
         const fechaFormateada = fechaActual.toDateString();
         dias.push(fechaFormateada);
         fechaActual.setDate(fechaActual.getDate() + 1);

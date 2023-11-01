@@ -35,7 +35,7 @@ export function estacion(fecha, hemisferio){
 
 
         if(fechaInicioDate <= fechaFormat && fechaFormat <=fechaFinDate){
-            res = [fechaInicioDate, fechaFinDate, estaciones[nombreEstacion].elemento_id, estaciones[nombreEstacion].nombre]
+            res = [nombreEstacion, fechaInicioDate, fechaFinDate, estaciones[nombreEstacion].elemento_id, estaciones[nombreEstacion].nombre]
         }
 
       });

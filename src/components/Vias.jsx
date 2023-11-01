@@ -6,7 +6,6 @@ export function Vias({children}){
 
     return (
         <div>
-
             <h2>Vías</h2>
             {viasYin.map((e, index) => (
                 <p key={index}>{e.via}</p>

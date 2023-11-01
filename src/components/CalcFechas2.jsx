@@ -1,11 +1,12 @@
 import { estacion } from "../utils/functions/estacion"
-import { elementoPorId } from "../utils/functions/elementoPorId"
 import { Vias } from "./Vias"
+import { Masajes } from "./Masajes"
+import { elementoPorId } from "../utils/functions/elementoPorId"
 
 export function CalcFechas2({children, hemisferio}) {
 
     let res = estacion(children, hemisferio)
-    const[inicio, fin, elementoId, nombre] = res
+    const[estacionKey, inicio, fin, elementoId, nombre] = res
     
     return(
         <>
@@ -19,6 +20,9 @@ export function CalcFechas2({children, hemisferio}) {
                 <Vias>
                     {elementoId}
                 </Vias>
+
+                <Masajes inicio={inicio} fin={fin} elementoId={elementoId} fecha={children}/>
+
             </div>
         </>
     )
