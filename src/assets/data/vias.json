@@ -6,7 +6,7 @@
                 "nombre": "Primavera",
                 "norte":{
                     "inicio": [21, 3],
-                    "fin": [22, 6]
+                    "fin": [21, 6]
                 },
                 "sur": {
                     "inicio": [24, 9],
@@ -15,12 +15,12 @@
                 "elemento_id": 2,
                 "nombre": "Verano",
                 "norte":{
-                    "inicio": [23, 6],
+                    "inicio": [21, 6],
                     "fin": [23, 9]
                 },
                 "sur": {
                     "inicio": [23, 12],
-                    "fin": [22, 3]}
+                    "fin": [20, 3]}
             },"canicula": {
                 "elemento_id": 3,
                 "nombre": "Canícula",
@@ -40,7 +40,7 @@
                 },
                 "sur": {
                     "inicio": [21, 3],
-                    "fin": [20, 6]}
+                    "fin": [21, 6]}
             },"invierno": {
                 "elemento_id": 5,
                 "nombre": "Invierno",
