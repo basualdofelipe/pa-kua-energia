@@ -23,7 +23,7 @@ export function calculoSedTonCaniculaPorFecha(inicio, fin, elementoId, fecha) {
     // TODO AGREGAR A LA CANÍCULA EN CASO DE SER ENTRE FUEGO Y METAL AUMENTA 40
     // RESOLVER 
 
-    let sedacion  = 0
+    let sedacion  = null
     if (new Date(fecha) <= fechaMedia ){
         sedacion = Math.floor(cantDiariaMasaje * diasTranscurridos + 40)
     } else {
@@ -40,10 +40,10 @@ export function calculoSedTonCaniculaPorFecha(inicio, fin, elementoId, fecha) {
     let tipoMasajeCanicula = 0 // 0-Sedación, 1-Tonificaicón
     
     if(diasTranscurridos <= 8){
-        if(elementoId == 4) {cantCanicula = 80}  //CHEQUEAAAAAAAAAAAAAAAAAAAAAAAAR
+        if(elementoId == 4) {cantCanicula = 80}
         canicula = Math.ceil(cantCanicula - cantCanicula/2/7 * (diasTranscurridos - 1))
-    } else if (diasTranscurridos >= totalDiasEstacion - 7){
-        if(elementoId == 2) {cantCanicula = 80}  //CHEQUEAAAAAAAAAAAAAAAAAAAAAAAAR
+    } else if (diasTranscurridos >= totalDiasEstacion - 6){
+        if(elementoId == 2) {cantCanicula = 80}
         canicula = Math.ceil(cantCanicula - cantCanicula/2/7 * (totalDiasEstacion - diasTranscurridos + 1))
     }
     

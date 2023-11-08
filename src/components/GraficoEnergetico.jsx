@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import {Line} from 'react-chartjs-2'
 import { diasEntreFechas } from "../utils/functions/diasEntreFechas";
@@ -7,7 +8,6 @@ import { calculoSedTonCaniculaPorFecha } from "../utils/functions/calculoSedTonC
 export function GraficoEnergetico({hemisferio}){
     
     const dataAño = diasEntreFechas(new Date(2023,0,1), new Date(2023, 11, 31))
-    console.log(dataAño)
 
     const arr = dataAño.map((dia) => {
         let res = estacion(dia, hemisferio)
@@ -15,33 +15,52 @@ export function GraficoEnergetico({hemisferio}){
 
         const datos = calculoSedTonCaniculaPorFecha(inicio, fin, elementoId, dia)
         
+        datos.fecha = dia
 
         return(
-            {
-                fecha: dia,
-                elemento_id: datos.sedacion.elemento_id,
-                sedaciones:datos.sedacion.cant
-            }
+           datos
         )
         
     })
 
-    function crearElemento(label, elementoId, color) {
+    function crearElemento(label, elementoId, color, sentido, proyeccion) {
         return {
           label: label,
           data: arr.map((data) => {
-            return data.elemento_id == elementoId ? data.sedaciones : null
+            if(data.sedacion.elemento_id == elementoId){
+                return data.sedacion.cant ? data.sedacion.cant*sentido : proyeccion
+            } else if(data.tonificacion.elemento_id == elementoId){
+                return data.tonificacion.cant ? data.tonificacion.cant*(-sentido) : proyeccion
+            } else if(elementoId == 3){
+                return data.canicula.cant <= 0 // por algún motivo da -0 qcy
+                ? proyeccion 
+                : data.canicula.tipo 
+                ? data.canicula.cant*(-sentido) 
+                : data.canicula.cant*sentido
+            } else {
+                return proyeccion
+            }
         }),
           backgroundColor: color,
           borderColor: color,
+          pointRadius: 1
         };
       }
 
-    const maderaSed = crearElemento("Madera", 1, "#7dbd00")
-    const fuegoSed = crearElemento("Fuego", 2, "#ff5b00")
-    const tierraSed = crearElemento("Tierra", 3, "#dcf600")
-    const metalSed = crearElemento("Metal", 4, "#000000")
-    const aguaSed = crearElemento("Agua", 5, "#FFFFFF")
+    const [sentido, setSentido] = useState(1);
+    const [proyeccion, setProyeccion] = useState(null);
+    console.log(sentido)
+
+    function cambiarProyeccion(proyeccion){
+        return proyeccion == 0 ? null : 0
+    }
+    // let sentido = -1
+    // let proyeccion = null
+    const maderaSed = crearElemento("Madera", 1, "#7dbd00", sentido, proyeccion)
+    const fuegoSed = crearElemento("Fuego", 2, "#ff5b00", sentido, proyeccion)
+    const tierraSed = crearElemento("Tierra", 3, "#dcf600", sentido, proyeccion)
+    const metalSed = crearElemento("Metal", 4, "#000000", sentido, proyeccion)
+    const aguaSed = crearElemento("Agua", 5, "#FFFFFF", sentido, proyeccion)
 
 
     return(
@@ -60,48 +79,12 @@ export function GraficoEnergetico({hemisferio}){
                     line: {
                         tension: 0.4,
                     }
-                },
-                plugins: {
-                    customCanvasBackgroundColor: {
-                        color: '#7dbd00'
-                      }
                 }
             }}
         />
 
-        <Line
-            datasetIdKey='id'
-            data={{
-                labels: ['Jun', 'Jul', 'Aug'],
-                datasets: [
-                {
-                    id: 1,
-                    label: 'uno',
-                    data: [5, 6, 7],
-                },
-                {
-                    id: 2,
-                    label: 'dos',
-                    data: [1, 2, 4],
-                },
-                {
-                    id: 3,
-                    label: 'tres',
-                    data: [3, 5, 1],
-                },
-                {
-                    id: 4,
-                    label: 'cuatro',
-                    data: [1, 9, 7],
-                },
-                {
-                    id: 5,
-                    label: 'cinco',
-                    data: [3, 2, 1],
-                },
-                ],
-            }}
-        />
+        <button onClick={() => setSentido(-sentido)}>Sentido</button>
+        <button onClick={() => setProyeccion(cambiarProyeccion(proyeccion))}>Proyeccion</button>
 
         </div>
     )
