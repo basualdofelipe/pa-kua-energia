@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Chart as ChartJS, defaults } from "chart.js/auto";
+import { Chart as ChartJS, LinearScale, TimeScale, PointElement, LineController, defaults } from "chart.js/auto";
+import 'chartjs-adapter-date-fns';
+import {es, ja} from 'date-fns/locale';
+import { format } from 'date-fns';
 import {Line} from 'react-chartjs-2'
 import { diasEntreFechas } from "../utils/functions/diasEntreFechas";
 import { estacion } from "../utils/functions/estacion";
@@ -12,6 +15,8 @@ export function GraficoEnergetico({hemisferio}){
     const arr = dataAño.map((dia) => {
         let res = estacion(dia, hemisferio)
         let [estacionKey, inicio, fin, elementoId, nombre] = res
+
+        const fecha = new Date(dia);
 
         const datos = calculoSedTonCaniculaPorFecha(inicio, fin, elementoId, dia)
         
@@ -49,19 +54,18 @@ export function GraficoEnergetico({hemisferio}){
 
     const [sentido, setSentido] = useState(1);
     const [proyeccion, setProyeccion] = useState(null);
-    console.log(sentido)
 
     function cambiarProyeccion(proyeccion){
         return proyeccion == 0 ? null : 0
     }
-    // let sentido = -1
-    // let proyeccion = null
+
     const maderaSed = crearElemento("Madera", 1, "#7dbd00", sentido, proyeccion)
     const fuegoSed = crearElemento("Fuego", 2, "#ff5b00", sentido, proyeccion)
     const tierraSed = crearElemento("Tierra", 3, "#dcf600", sentido, proyeccion)
     const metalSed = crearElemento("Metal", 4, "#000000", sentido, proyeccion)
     const aguaSed = crearElemento("Agua", 5, "#FFFFFF", sentido, proyeccion)
 
+    console.log(Date().toLocaleLowerCase())
 
     return(
         <div>
@@ -69,7 +73,7 @@ export function GraficoEnergetico({hemisferio}){
         <Line style={{backgroundColor: "#E1E1E1"}}
             datasetIdKey='elemento_id'
             data={{
-                labels: arr.map(data => data.fecha),
+                labels: arr.map(data => new Date(data.fecha)),
                 datasets: [
                     maderaSed, fuegoSed, tierraSed, metalSed, aguaSed
                 ]
@@ -78,8 +82,20 @@ export function GraficoEnergetico({hemisferio}){
                 elements: {
                     line: {
                         tension: 0.4,
-                    }
-                }
+                    },
+                },
+                scales: {
+                    x: {
+                        date: { locale: es },
+                        type: "time",
+                        time: {
+                            unit: 'month',
+                            // displayFormats: {
+                            //     month: 'MMMM YYYY', // 'MMMM' mostrará el nombre completo del mes
+                            // }
+                        },
+                      }
+                },
             }}
         />
 
