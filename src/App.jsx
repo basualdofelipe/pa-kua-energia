@@ -11,7 +11,7 @@ function App() {
       {/* <GraficoEnergetico hemisferio={1}/> */}
 
       <CalcFechas hemisferio={1}>
-        {new Date(2023, 2, 8)}
+        {Date()}
       </CalcFechas>
 
     </div>
