@@ -5,7 +5,6 @@ import data from "./assets/data/vias.json"
 
 export function CalculoFechas() {
     
-  console.log(data.estaciones.invierno)
 
     masajes(Date(2023, 11, 25))
     // fecha inicio y fin de la estación
