@@ -1,5 +1,6 @@
 import { CalcFechas } from "./components/CalcFechas";
 import { GraficoEnergetico } from "./components/GraficoEnergetico";
+import "./App.scss"
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       {/* <GraficoEnergetico hemisferio={1}/> */}
 
       <CalcFechas hemisferio={1}>
-        {Date()}
+        {new Date(2023, 2, 8)}
       </CalcFechas>
 
     </div>

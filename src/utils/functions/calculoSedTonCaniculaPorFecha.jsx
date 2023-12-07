@@ -54,20 +54,25 @@ export function calculoSedTonCaniculaPorFecha(inicio, fin, elementoId, fecha) {
         }
     }
 
+    tipoMasajeCanicula = tipoMasajeCanicula ? "tonificacion" : "sedacion" // si es sedación (0) o tonificación (1)
+
+
     return(
             {
                 sedacion: {
                     elemento_id: elementoId,
-                    cant: sedacion
+                    cant: sedacion,
+                    tipo: "sedacion"
                 },
                 tonificacion: {
                     elemento_id: proximaEstacionId(elementoId),
-                    cant: tonificacion
+                    cant: tonificacion,
+                    tipo: "tonificacion"
                 },
                 canicula: {
                     elemento_id: 3,
                     cant: canicula,
-                    tipo: tipoMasajeCanicula //si es sedación o tonificación
+                    tipo: tipoMasajeCanicula
                 },
 
             }
