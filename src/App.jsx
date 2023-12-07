@@ -12,6 +12,9 @@ function App() {
       <CalcFechas2 hemisferio={1}>
         {Date()}
       </CalcFechas2>
+      <CalcFechas2 hemisferio={1}>
+        {new Date(2023, 11, 30)}
+      </CalcFechas2>
 
     </div>
   );
