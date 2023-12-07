@@ -3,7 +3,7 @@ import { Vias } from "./Vias"
 import { Masajes } from "./Masajes"
 import { elementoPorId } from "../utils/functions/elementoPorId"
 
-export function CalcFechas2({children, hemisferio}) {
+export function CalcFechas({children, hemisferio}) {
 
     let res = estacion(children, hemisferio)
     const[estacionKey, inicio, fin, elementoId, nombre] = res
@@ -16,10 +16,6 @@ export function CalcFechas2({children, hemisferio}) {
                 <p>Elemento: {elementoPorId(elementoId).elemento}</p>
                 <p>Inicio: {inicio.toLocaleDateString()}</p>
                 <p>Fin: {fin.toLocaleDateString()}</p>
-
-                <Vias>
-                    {elementoId}
-                </Vias>
 
                 <Masajes inicio={inicio} fin={fin} elementoId={elementoId} fecha={children}/>
 
