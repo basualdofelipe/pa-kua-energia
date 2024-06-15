@@ -13,8 +13,8 @@ export function CalcFechas({children, hemisferio}) {
             <div className="datos">
                 <p>Estación: {nombre}</p>
                 <p>Elemento: {elementoPorId(elementoId).elemento}</p>
-                {/* <p>Inicio: {inicio.toLocaleDateString()}</p>
-                <p>Fin: {fin.toLocaleDateString()}</p> */}
+                <p>Inicio: {inicio.toLocaleDateString()}</p>
+                <p>Fin: {fin.toLocaleDateString()}</p>
             </div>
             <Masajes inicio={inicio} fin={fin} elementoId={elementoId} fecha={children}/>
         </div>

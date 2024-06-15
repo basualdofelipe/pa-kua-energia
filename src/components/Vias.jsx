@@ -7,7 +7,7 @@ export function Vias({children, cantidad, tipo, elementoId}){
     const viasYang = viasPorElementoId(children).yang
     const source = "./img/vias_de_energia/"
 
-    console.log(elementoId)
+    // console.log(elementoId)
 
     return (
         <div className={tipo + ", vias"}>
@@ -20,6 +20,8 @@ export function Vias({children, cantidad, tipo, elementoId}){
                     {[...viasYin, ...viasYang].map((e, index) => (
                         <div className="vias-viaparticular" key={index}>
                             <img src={source + e.imagen} alt="" />
+                            <p>Punto de {tipo == "sedacion" ? "sedación: " + e.masaje.sedacion : "tonificación: " + e.masaje.tonificacion}</p>
+                            <p>Horario máxima actividad: {e.horario_max_actividad[0]}hs a {e.horario_max_actividad[1]}hs</p>
                         </div>
                     ))}
                 </span>
