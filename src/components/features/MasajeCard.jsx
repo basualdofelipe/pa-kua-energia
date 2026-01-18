@@ -1,4 +1,5 @@
 import { Card, CardContent, Badge } from '../ui'
+import { useViaModal } from '../../context/ViaModalContext'
 
 const elementoVariant = {
   1: 'madera',
@@ -49,12 +50,26 @@ export function MasajeCard({ masaje, className = '' }) {
 }
 
 function ViaInfo({ via, tipo }) {
+  const { openVia } = useViaModal()
   const punto = tipo === 'sedacion' ? via.masaje.sedacion : via.masaje.tonificacion
 
   return (
-    <div className="bg-gray-50 rounded-lg p-3">
-      <p className="font-medium text-gray-900">{via.via}</p>
-      <p className="text-sm text-gray-600 mt-1">{punto}</p>
-    </div>
+    <button
+      onClick={() => openVia(via, tipo)}
+      className="w-full text-left bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors flex items-center justify-between group"
+    >
+      <div className="flex-1 min-w-0">
+        <p className="font-medium text-gray-900">{via.via}</p>
+        <p className="text-sm text-gray-600 mt-0.5 truncate">{punto}</p>
+      </div>
+      <svg
+        className="w-5 h-5 text-gray-400 group-hover:text-gray-600 flex-shrink-0 ml-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
   )
 }

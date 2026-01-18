@@ -1,8 +1,10 @@
-import { useMemo } from 'react'
+import { useMemo, useEffect } from 'react'
 import { useHemisferio } from '../../context/HemisferioContext'
+import { useViaModal } from '../../context/ViaModalContext'
 import { useMasajesDelDia } from '../../hooks/useMasajesDelDia'
 import { Card, CardHeader, CardTitle, CardContent, Toggle } from '../ui'
 import { MasajeCard } from './MasajeCard'
+import { ViaModal } from './ViaModal'
 
 const hemisferioOptions = [
   { value: 'norte', label: '🌎 Norte' },
@@ -14,8 +16,51 @@ const hemisferioOptions = [
  */
 export function MasajesHoy() {
   const { hemisferio, setHemisferio, loading } = useHemisferio()
+  const { registerVias } = useViaModal()
   const hoy = useMemo(() => new Date(), [])
   const data = useMasajesDelDia(hoy, hemisferio)
+
+  // Registrar todas las vías del día para navegación
+  useEffect(() => {
+    if (!data) {
+      registerVias([])
+      return
+    }
+
+    const todasLasVias = []
+
+    // Agregar vías de sedación
+    if (data.masajes.sedacion?.vias) {
+      data.masajes.sedacion.vias.yin?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.sedacion.tipo })
+      })
+      data.masajes.sedacion.vias.yang?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.sedacion.tipo })
+      })
+    }
+
+    // Agregar vías de tonificación
+    if (data.masajes.tonificacion?.vias) {
+      data.masajes.tonificacion.vias.yin?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.tonificacion.tipo })
+      })
+      data.masajes.tonificacion.vias.yang?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.tonificacion.tipo })
+      })
+    }
+
+    // Agregar vías de canícula
+    if (data.masajes.canicula?.vias) {
+      data.masajes.canicula.vias.yin?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.canicula.tipo })
+      })
+      data.masajes.canicula.vias.yang?.forEach(via => {
+        todasLasVias.push({ via, tipo: data.masajes.canicula.tipo })
+      })
+    }
+
+    registerVias(todasLasVias)
+  }, [data, registerVias])
 
   if (loading) {
     return (
@@ -84,6 +129,9 @@ export function MasajesHoy() {
           </div>
         </div>
       )}
+
+      {/* Modal global de vías con navegación */}
+      <ViaModal />
     </div>
   )
 }
