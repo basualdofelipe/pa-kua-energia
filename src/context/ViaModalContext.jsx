@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, useCallback } from 'react'
+import { createContext, useState, useCallback } from 'react'
 
-const ViaModalContext = createContext(null)
+export const ViaModalContext = createContext(null)
 
 export function ViaModalProvider({ children }) {
   const [vias, setVias] = useState([]) // Array de { via, tipo }
@@ -59,10 +59,3 @@ export function ViaModalProvider({ children }) {
   )
 }
 
-export function useViaModal() {
-  const context = useContext(ViaModalContext)
-  if (!context) {
-    throw new Error('useViaModal debe usarse dentro de ViaModalProvider')
-  }
-  return context
-}

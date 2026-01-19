@@ -6,32 +6,27 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        madera: {
-          light: '#86efac',
-          DEFAULT: '#22c55e',
-          dark: '#166534',
+      screens: {
+        'xs': '480px',
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
         },
-        fuego: {
-          light: '#fca5a5',
-          DEFAULT: '#ef4444',
-          dark: '#991b1b',
+        zoomIn: {
+          from: { opacity: '0', transform: 'scale(0.95)' },
+          to: { opacity: '1', transform: 'scale(1)' },
         },
-        tierra: {
-          light: '#fde047',
-          DEFAULT: '#eab308',
-          dark: '#a16207',
+        slideUp: {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
-        metal: {
-          light: '#f5f5f5',
-          DEFAULT: '#a3a3a3',
-          dark: '#525252',
-        },
-        agua: {
-          light: '#93c5fd',
-          DEFAULT: '#3b82f6',
-          dark: '#1e40af',
-        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.2s ease-out both',
+        'zoom-in': 'zoomIn 0.3s ease-out both',
+        'slide-up': 'slideUp 0.3s ease-out both',
       },
     },
   },

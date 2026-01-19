@@ -10,11 +10,11 @@
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
   }
 
   .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700;
+    @apply bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg;
   }
 
   .btn-secondary {
@@ -22,6 +22,10 @@
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-md p-6;
+    @apply bg-white rounded-2xl p-6 border border-slate-100
+           shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]
+           transition-all duration-300
+           hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.12)]
+           hover:-translate-y-0.5;
   }
 }

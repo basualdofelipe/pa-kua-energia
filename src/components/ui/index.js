@@ -1,4 +1,6 @@
 export { Card, CardHeader, CardTitle, CardContent } from './Card'
 export { Toggle } from './Toggle'
 export { Badge } from './Badge'
-export { Modal } from './Modal'
+export { YinYang } from './YinYang'
+export { DateSlider } from './DateSlider'
+export { ChevronLeft, ChevronRight, Calendar, Close, Clock, Link, CheckCircle } from './Icons'

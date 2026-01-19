@@ -1,18 +1,6 @@
-import { Card, CardContent, Badge } from '../ui'
-import { useViaModal } from '../../context/ViaModalContext'
-
-const elementoVariant = {
-  1: 'madera',
-  2: 'fuego',
-  3: 'tierra',
-  4: 'metal',
-  5: 'agua',
-}
-
-const tipoLabels = {
-  sedacion: 'Sedación',
-  tonificacion: 'Tonificación',
-}
+import { Card, CardContent, Badge, ChevronRight } from '../ui'
+import { useViaModal } from '../../hooks/useViaModal'
+import { ELEMENTO_NAMES, ELEMENTO_BORDER_COLORS, TIPO_LABELS } from '../../utils/constants'
 
 /**
  * Card que muestra un tipo de masaje con sus vías y puntos
@@ -20,11 +8,11 @@ const tipoLabels = {
 export function MasajeCard({ masaje, className = '' }) {
   if (!masaje || !masaje.cant) return null
 
-  const variant = elementoVariant[masaje.elemento_id]
-  const tipoLabel = tipoLabels[masaje.tipo]
+  const variant = ELEMENTO_NAMES[masaje.elemento_id]
+  const tipoLabel = TIPO_LABELS[masaje.tipo]
 
   return (
-    <Card className={`border-l-4 border-l-${variant === 'madera' ? 'green' : variant === 'fuego' ? 'red' : variant === 'tierra' ? 'yellow' : variant === 'metal' ? 'gray' : 'blue'}-500 ${className}`}>
+    <Card className={`border-l-4 ${ELEMENTO_BORDER_COLORS[variant]} ${className}`}>
       <CardContent>
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -56,20 +44,18 @@ function ViaInfo({ via, tipo }) {
   return (
     <button
       onClick={() => openVia(via, tipo)}
-      className="w-full text-left bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors flex items-center justify-between group"
+      className="w-full text-left bg-gradient-to-r from-slate-50 to-white rounded-xl p-4
+                 border border-slate-100 hover:border-slate-200
+                 hover:shadow-md hover:from-white hover:to-slate-50
+                 transition-all duration-300 flex items-center justify-between group overflow-hidden"
     >
-      <div className="flex-1 min-w-0">
-        <p className="font-medium text-gray-900">{via.via}</p>
-        <p className="text-sm text-gray-600 mt-0.5 truncate">{punto}</p>
+      <div className="flex-1 min-w-0 overflow-hidden">
+        <p className="font-medium text-slate-800 group-hover:text-slate-900 truncate">{via.via}</p>
+        <p className="text-sm text-slate-500 mt-0.5 line-clamp-2">{punto}</p>
       </div>
-      <svg
-        className="w-5 h-5 text-gray-400 group-hover:text-gray-600 flex-shrink-0 ml-2"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
+      <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-slate-200 flex items-center justify-center transition-colors ml-3 flex-shrink-0">
+        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-colors" />
+      </div>
     </button>
   )
 }

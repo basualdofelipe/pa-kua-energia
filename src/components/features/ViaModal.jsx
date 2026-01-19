@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { useViaModal } from '../../context/ViaModalContext'
+import { useViaModal } from '../../hooks/useViaModal'
+import { ChevronLeft, ChevronRight, Close, Clock, Link, CheckCircle } from '../ui'
 
 /**
  * Modal global para mostrar vías con navegación estilo carousel
@@ -50,7 +51,7 @@ export function ViaModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
         onClick={closeModal}
       />
 
@@ -58,11 +59,11 @@ export function ViaModal() {
       {hasPrev && (
         <button
           onClick={goPrev}
-          className="absolute left-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white shadow-lg transition-all hover:scale-110"
+          className="absolute left-4 z-10 w-14 h-14 flex items-center justify-center rounded-full
+                     bg-white/95 hover:bg-white shadow-xl border border-slate-100
+                     transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-fade-in"
         >
-          <svg className="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft className="w-6 h-6 text-slate-700" />
         </button>
       )}
 
@@ -70,26 +71,24 @@ export function ViaModal() {
       {hasNext && (
         <button
           onClick={goNext}
-          className="absolute right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white shadow-lg transition-all hover:scale-110"
+          className="absolute right-4 z-10 w-14 h-14 flex items-center justify-center rounded-full
+                     bg-white/95 hover:bg-white shadow-xl border border-slate-100
+                     transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-fade-in"
         >
-          <svg className="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight className="w-6 h-6 text-slate-700" />
         </button>
       )}
 
       {/* Modal content */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-[80vw] max-h-[90vh] overflow-hidden flex flex-col mx-16">
+      <div className="relative bg-white rounded-2xl shadow-2xl w-[80vw] max-h-[90vh] overflow-hidden flex flex-col mx-16 animate-zoom-in">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">{via.via}</h2>
+        <div className="flex items-center justify-between p-5 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white">
+          <h2 className="text-2xl font-bold text-slate-900">{via.via}</h2>
           <button
             onClick={closeModal}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2.5 rounded-xl hover:bg-slate-100 transition-colors"
           >
-            <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <Close className="w-5 h-5 text-slate-500" />
           </button>
         </div>
 
@@ -108,11 +107,19 @@ export function ViaModal() {
             {/* Info - derecha */}
             <div className="lg:w-1/2 space-y-5">
               {/* Punto de masaje destacado */}
-              <div className="bg-blue-50 rounded-lg p-4">
-                <p className="text-sm font-medium text-blue-800 mb-1">
+              <div className={`rounded-2xl p-5 ${
+                tipo === 'sedacion'
+                  ? 'bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100'
+                  : 'bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-100'
+              }`}>
+                <p className={`text-sm font-semibold mb-2 ${
+                  tipo === 'sedacion' ? 'text-orange-600' : 'text-purple-600'
+                }`}>
                   Punto de {tipo}
                 </p>
-                <p className="text-blue-900 text-lg">{punto}</p>
+                <p className={`text-xl font-medium ${
+                  tipo === 'sedacion' ? 'text-orange-900' : 'text-purple-900'
+                }`}>{punto}</p>
               </div>
 
               {/* Info adicional */}
@@ -120,9 +127,7 @@ export function ViaModal() {
                 {via.horario_max_actividad && (
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <Clock className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Máxima actividad</p>
@@ -134,9 +139,7 @@ export function ViaModal() {
                 {via.acoplado && (
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                      </svg>
+                      <Link className="w-5 h-5 text-purple-600" />
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Acoplado</p>
@@ -148,9 +151,7 @@ export function ViaModal() {
                 {via.funcion && (
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <CheckCircle className="w-5 h-5 text-green-600" />
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Función</p>
